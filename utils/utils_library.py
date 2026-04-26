@@ -63,10 +63,23 @@ def DoSystematics(path, varBin, parName, fOut):
     parErrArray = array( 'f', [] )
 
     fInNameAllList = os.listdir(path)
-    fInNameSelList = [path + "/" + fInName for fInName in fInNameAllList if varBin in fInName]
-    fInNameSelList = [fInName for fInName in fInNameSelList if ".root" in fInName]
+
+    # Filter files that contain varBin
+    fInNameSelList = [
+        os.path.join(path, fInName)
+        for fInName in fInNameAllList
+        if varBin in fInName and fInName.startswith("hMass") and fInName.endswith(".root")
+    ]
+
+    # Sort the list
     fInNameSelList.sort()
-    
+
+    # Print the sorted list
+    print("Sorted selected ROOT files:")
+    for fname in fInNameSelList:
+       print(fname)
+
+
     index = 0.5
     for fInName in fInNameSelList:
         fIn = TFile.Open(fInName)
@@ -79,7 +92,11 @@ def DoSystematics(path, varBin, parName, fOut):
                 parErrArray.append(fIn.Get(kname).GetBinError(fIn.Get(kname).GetXaxis().FindBin(parName)))
                 index = index + 1
 
-    graParVal = TGraphErrors(len(parValArray), trialIndexArray, parValArray, 0, parErrArray)
+    N = len(parValArray)
+    print("Number of trials=", N)
+    ex = np.zeros(N, dtype=np.float64)   # zero x-errors
+    graParVal = TGraphErrors(N, trialIndexArray, parValArray, 0, parErrArray)
+   # graParVal = TGraphErrors(len(parValArray), trialIndexArray, parValArray, ex, parErrArray)
     graParVal.SetMarkerStyle(24)
     graParVal.SetMarkerSize(1.2)
     graParVal.SetMarkerColor(kBlack)
@@ -124,12 +141,16 @@ def DoSystematics(path, varBin, parName, fOut):
     SetLatex(latexTitle)
 
     canvasParVal = TCanvas("canvasParVal", "canvasParVal", 800, 600)
+    canvasParVal.SetBottomMargin(0.5)
     #histGrid = TH2F("histGrid", "", len(parValArray), 0, len(parValArray), 100, 0.7 * max(parValArray), 1.3 * max(parValArray))
     histGrid = TH2F("histGrid", "", len(parValArray), 0, len(parValArray), 100, centralVal-7*systError, centralVal+7*systError)
     indexLabel = 1
     for nameTrial in nameTrialArray:
         histGrid.GetXaxis().SetBinLabel(indexLabel, nameTrial)
         indexLabel += 1
+    # Make X-axis labels horizontal and reduce font size
+    histGrid.GetXaxis().LabelsOption("v")     # 'h' for horizontal, 'v' for vertical
+    histGrid.GetXaxis().SetLabelSize(0.03)     # Reduce from default (~0.04)    
     histGrid.Draw("same")
     linePar.Draw("same")
     lineParStatUp.Draw("same")
@@ -149,6 +170,8 @@ def DoSystematics(path, varBin, parName, fOut):
     #fOut.write("%3.2f %3.2f %3.2f %3.2f %3.2f \n" % (float(num[0]), float(num[1]), centralVal, statError, systError))
     fOut.write("%3.2f %3.2f %3.2f %3.2f %3.2f \n" % (0, 20, centralVal, statError, systError))
     canvasParVal.SaveAs("{}/systematics/{}_{}.pdf".format(path, varBin, parName))
+    canvasParVal.SaveAs("{}/systematics/{}_{}.png".format(path, varBin, parName))
+
 
 def CheckVariables(fInNames, parNames, xMin, xMax, fOutName, obs):
     '''
@@ -187,6 +210,21 @@ def CheckVariables(fInNames, parNames, xMin, xMax, fOutName, obs):
         for i in range(0, len(xMin)):
             histParVal.SetBinContent(i+1, parValArray[i])
             histParVal.SetBinError(i+1, parErrArray[i])
+            
+            
+            
+  # Instead of fInNames → just fInName (single string)
+#  fIn = TFile.Open(fInName)
+
+
+  # Then loop over histograms inside this file
+#  for key in fIn.GetListOfKeys():
+ #   kname = key.GetName()
+  #  if "fit_results" in kname:
+   #     hist = fIn.Get(kname)
+    #    parValArray.append(hist.GetBinContent(hist.GetXaxis().FindBin(parName)))
+     #   parErrArray.append(hist.GetBinError(hist.GetXaxis().FindBin(parName)))
+
 
         graParVal = TGraphErrors(len(parValArray), xCentr, parValArray, xError, parErrArray)
         graParVal.SetMarkerStyle(24)
