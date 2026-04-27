@@ -1,0 +1,49 @@
+{
+    "input": {
+      "input_file_name": "/Users/lucamicheletti/GITHUB/dq_analysis_utils/macro/output/Data/LHC22m_apass1_bis_muons.root",
+      "input_name": ["Mass_PairsMuonSEPM_muonQualityCuts", "PairsMuonSEPM_muonQualityCuts_Mass_Pt_Proj_0_Pt_2", "PairsMuonSEPM_muonQualityCuts_Mass_Pt_Proj_2_Pt_6", "PairsMuonSEPM_muonQualityCuts_Mass_Pt_Proj_6_Pt_20"],
+      "pdf_dictionary": {
+        "pdf": ["Gaus", "VWG", "SUM"],
+        "pdfName": ["Jpsi", "Bkg", "SUM"],
+        "pdfNameForLegend": ["J/#psi", "Background", "Fit"],
+        "pdfColor": [861, 1],
+        "pdfStyle": [1, 2],
+        "parVal": [
+          [3.096, 1.2e-01],
+          [1, 1, 1],
+          [1000, 100000]
+        ],
+        "parLimMin": [
+          [2.9, 7.0e-02],
+          [-10, 0, -100],
+          [0, 0]
+        ],
+        "parLimMax": [
+          [3.5, 3.0e-01],
+          [10, 100, 100],
+          [500000, 500000]
+        ],
+        "parName": [
+          ["mean_Jpsi", "width_Jpsi"],
+          ["aa", "bb", "cc"],
+          ["sig_Jpsi", "bkg"]
+        ],
+        "fitRangeMin": [2],
+        "fitRangeMax": [5],
+        "fitMethod": "likelyhood",
+        "doResidualPlot": true,
+        "doPullPlot": true, 
+        "doCorrMatPlot": true,
+        "doAlicePlot": true,
+        "parForAlicePlot": ["mean_Jpsi", "width_Jpsi", "sig_Jpsi"],
+        "parNameForAlicePlot": ["#mu_{J/#psi}", "#sigma_{J/#psi}", "#it{N}_{J/#psi}"],
+        "text": [
+          [0.20, 0.87, "LHC22m, pp #sqrt{#it{s}} = 13.6 TeV"], 
+          [0.20, 0.80, "2.5 < #it{y} < 4, J/#psi #rightarrow #mu^{+}#mu^{-}"]
+        ]
+      }
+    },
+    "output": {
+      "output_path": "output/LHC22m_Gaus_VWG/"
+    }
+  }

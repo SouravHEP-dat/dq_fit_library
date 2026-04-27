@@ -1,0 +1,67 @@
+{
+  "input": {
+    "input_file_name": "AnalysisResults_LHC23PbPb_Pass4_91GoodRun_pTBin.root",
+    "input_name": ["hMassDimu_ME_2-8_0_12"],
+    "input_folder_name": "",
+    "pdf_dictionary": {
+      "pdf": ["NA60", "NA60", "VWG", "SUM"],
+      "pdfName": ["Jpsi", "Psi2s", "Bkg", "SUM"],
+      "pdfColor": [861, 417, 1],
+      "pdfNameForLegend": ["J/#psi", "Psi2s", "Background", "Fit"],
+      "pdfStyle": [1, 1, 2],
+      "parFix": [
+        [False, False, True, True, True, True, True, True, True, True],
+        [False, False, True, True, True, True, True, True, True, True],
+        [False, False, False],
+        [False, False, False]
+      ],
+      "parVal": [
+        [3.096, 1.2e-01, 0.613, 0.048, 2.069, 0.132, 2.608, 0.079, 1.50,  0.055],
+        [3.68, 1.5e-01, 0.613, 0.048, 2.069, 0.132, 2.608, 0.079, 1.50,  0.055],
+        [1, 1, 1],
+        [1000, 100, 100000]
+      ],
+      "parLimMin": [
+        [2.9, 7.0e-02,  0.613, 0.048, 2.069, 0.132, 2.608, 0.079, 1.50,  0.055],
+        [3.2, 7.0e-02, 0.613, 0.048, 2.069, 0.132, 2.608, 0.079, 1.50,  0.055],
+        [0, 0, -100],
+        [0, 0, 0]
+      ],
+      "parLimMax": [
+        [3.5, 0.9e-01,0.613, 0.048, 2.069, 0.132, 2.608, 0.079, 1.50,  0.055],
+        [3.9, 0.9e-01,0.613, 0.048, 2.069, 0.132, 2.608, 0.079, 1.50,  0.055],
+        [2.5, 10, 10],
+        [4500000,35000, 7500000]
+      ],
+      "parName": [
+        ["mean_Jpsi", "width_Jpsi", "alphaL_Jpsi", "p1L_Jpsi", "p2L_Jpsi", "p3L_Jpsi", "alphaR_Jpsi", "p1R_Jpsi", "p2R_Jpsi", "p3R_Jpsi"],
+        ["sum::mean_Psi2s(mean_Jpsi,0.584)", "prod::width_Psi2s(width_Jpsi,1.05)", "alphaL_Psi2s", "p1L_Psi2s", "p2L_Psi2s", "p3L_Psi2s", "alphaR_Psi2s", "p1R_Psi2s", "p2R_Psi2s", "p3R_Psi2s"],
+        ["aa", "bb", "cc"],
+        ["sig_Jpsi", "sig_Psi2s", "bkg"]
+      ],
+      "fitRangeMin": [2.2],
+      "fitRangeMax": [4.5],
+      "fitMethod": "chi2",
+      "doResidualPlot": true,
+      "doPullPlot": true, 
+      "doCorrMatPlot": true,
+      "doAlicePlot": true,
+     # "parForAlicePlot": ["mean_Jpsi", "width_Jpsi", "sig_Jpsi"],
+     # "parNameForAlicePlot": ["#mu_{J/#psi}", "#sigma_{J/#psi}", "#it{N}_{J/#psi}"],
+      "parForAlicePlot": ["mean_Jpsi", "width_Jpsi", "sig_Jpsi", "mean_Psi2s", "width_Psi2s", "sig_Psi2s"],
+      "parNameForAlicePlot": ["#mu_{J/#psi}", "#sigma_{J/#psi}", "#it{N}_{J/#psi}", "#mu_{#psi(2S)}", "#sigma_{#psi(2S)}", "#it{N}_{#psi(2S)}"],
+
+      "text": [
+        [0.20, 0.87, "LHC23 NA60+VWG(MC tails), #sqrt{#it{s}} = 5.36 TeV"], 
+        [0.20, 0.80, "2.5 < #it{y} < 4, J/#psi #rightarrow #mu^{+}#mu^{-}"],
+        #[0.40, 0.74, "(60-90)%"]
+        [0.40, 0.74, "(0-12) GeV/#it{c}"]
+
+      ]
+    }
+  },
+  "output": {
+     "output_file_name": "output_yield2/",
+     "output_file_systematics": "output_yield/"
+  }
+}

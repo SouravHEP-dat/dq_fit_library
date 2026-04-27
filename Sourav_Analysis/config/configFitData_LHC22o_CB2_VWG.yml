@@ -1,0 +1,49 @@
+{
+    "input": {
+      "input_file_name": "/Users/lucamicheletti/GITHUB/dq_analysis_utils/macro/output/Data/LHC22o_apass1_bis_muons.root",
+      "input_name": ["Mass_PairsMuonSEPM_muonQualityCuts", "PairsMuonSEPM_muonQualityCuts_Mass_Pt_Proj_0_Pt_2", "PairsMuonSEPM_muonQualityCuts_Mass_Pt_Proj_2_Pt_6", "PairsMuonSEPM_muonQualityCuts_Mass_Pt_Proj_6_Pt_20"],
+      "pdf_dictionary": {
+        "pdf": ["CB2", "VWG", "SUM"],
+        "pdfName": ["Jpsi", "Bkg", "SUM"],
+        "pdfNameForLegend": ["J/#psi", "Background", "Fit"],
+        "pdfColor": [861, 1],
+        "pdfStyle": [1, 2],
+        "parVal": [
+          [3.096, 1.2e-01, 1.089, 3.393, 2.097, 8.694],
+          [1, 1, 1],
+          [100, 1000]
+        ],
+        "parLimMin": [
+          [2.9, 7.0e-02, 1.0889, 3.3929, 2.096, 8.693],
+          [-10, 0, -100],
+          [0, 0]
+        ],
+        "parLimMax": [
+          [3.5, 2.5e-01, 1.0891, 3.3931, 2.098, 8.695],
+          [10, 100, 100],
+          [50000, 50000]
+        ],
+        "parName": [
+          ["mean_Jpsi", "width_Jpsi", "a_Jpsi", "b_Jpsi", "c_Jpsi", "d_Jpsi"],
+          ["aa", "bb", "cc"],
+          ["sig_Jpsi", "bkg"]
+        ],
+        "fitRangeMin": [2],
+        "fitRangeMax": [5],
+        "fitMethod": "likelyhood",
+        "doResidualPlot": true,
+        "doPullPlot": true, 
+        "doCorrMatPlot": true,
+        "doAlicePlot": true,
+        "parForAlicePlot": ["mean_Jpsi", "width_Jpsi", "sig_Jpsi"],
+        "parNameForAlicePlot": ["#mu_{J/#psi}", "#sigma_{J/#psi}", "#it{N}_{J/#psi}"],
+        "text": [
+          [0.20, 0.87, "LHC22o, pp #sqrt{#it{s}} = 13.6 TeV"], 
+          [0.20, 0.80, "2.5 < #it{y} < 4, J/#psi #rightarrow #mu^{+}#mu^{-}"]
+        ]
+      }
+    },
+    "output": {
+      "output_path": "output/LHC22o_CB2_VWG/"
+    }
+  }

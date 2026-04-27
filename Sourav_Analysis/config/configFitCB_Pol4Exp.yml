@@ -1,0 +1,68 @@
+{
+  "input": {
+    "input_file_name": "AnalysisResults_LHC23PbPb_Pass4_85GoodRun_CBTMuon_Nov25_MyAnalysis_PtBin.root",
+    "input_folder_name": "CentralityClass_0-20%",
+    "input_name": ["hMassDimu_ME_2-8_0_1"],
+    "pdf_dictionary": {
+      "pdf": ["CB2","Pol4Exp", "SUM"],
+      "pdfName": ["Jpsi", "Bkg", "SUM"],
+      "pdfColor": [861, 417, 1],
+      "pdfNameForLegend": ["J/#psi","Background", "Fit"],
+      "pdfStyle": [1, 2],
+      "parFix": [
+        [False, False, True, True, True, True],
+        [False, False, False, False, False, False],
+        [False,False]
+      ],
+      "parVal": [
+        [3.096, 1.2e-01, 0.94, 6.99, 2.33, 10.72], #data tails
+        #[3.096, 1.2e-01, 1.048, 2.62, 2.61, 4.67], #MC tails
+        [1379, -456, 104, -19.6, 1.97, 1.03],
+        #[1000000, 800, 1000000] #Centrality Bin
+        [10000,20000] #pT Bin
+      ],
+      "parLimMin": [
+        [3.07, 7.0e-02, 0.94, 6.99, 2.33, 10.72], #data tails
+        ##[3.07, 7.0e-02, 1.048, 2.62, 2.61, 4.67],  #MC tails
+        [-20000, -1050, 0, -150, 1, 0.7],
+       # [50000, 100, 1000] #Centrality Bin
+        [500,1000] #pT Bin
+      ],
+      "parLimMax": [
+        [3.1, 9e-02, 0.94, 6.99, 2.33, 10.72], #data tails
+        #[3.1, 9e-02, 1.048, 2.62, 2.61, 4.67], #MC tails
+        [20000, -250, 10000, -5, 100, 10],
+        #[2500000, 25000, 2500000] #Centrality Bin
+        [4500000,6500000] #pT Bin
+      ],
+      "parName": [
+        ["mean_Jpsi", "width_Jpsi", "a_Jpsi", "b_Jpsi", "c_Jpsi", "d_Jpsi"],
+        ["aa", "bb", "cc","dd", "ee", "ff"],
+        ["sig_Jpsi","bkg"]
+      ],
+      "fitRangeMin": [2.1],
+      "fitRangeMax": [4.9],
+      "fitMethod": "chi2", # chi2, likelyhood
+      "doResidualPlot": true,
+      "doPullPlot": true, 
+      "doCorrMatPlot": true,
+      "doAlicePlot": true,
+     # "parForAlicePlot": ["mean_Jpsi", "width_Jpsi", "sig_Jpsi"],
+     # "parNameForAlicePlot": ["#mu_{J/#psi}", "#sigma_{J/#psi}", "#it{N}_{J/#psi}"],
+      "parForAlicePlot": ["mean_Jpsi", "width_Jpsi", "sig_Jpsi"],
+      "parNameForAlicePlot": ["#mu_{J/#psi}", "#sigma_{J/#psi}", "#it{N}_{J/#psi}"],
+
+      "text": [
+        [0.20, 0.87, "LHC23 CB2+Pol4Exp(data tails), #sqrt{#it{s}} = 5.36 TeV"], 
+        #[0.20, 0.87, "LHC23 CB2+Pol4Exp(MC tails), #sqrt{#it{s}} = 5.36 TeV"], 
+        [0.20, 0.80, "2.5 < #it{y} < 4, J/#psi #rightarrow #mu^{+}#mu^{-}"],
+        #[0.40, 0.74, "(0-20)%"]
+        [0.25, 0.74, "(0-1) GeV/#it{c}, (0-20)%"]
+      ]
+    }
+  },
+  "output": {
+    "output_file_name": "output_yield7/",
+    "output_file_systematic": "output_yield/"
+  }
+}

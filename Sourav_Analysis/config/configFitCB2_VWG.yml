@@ -1,0 +1,85 @@
+{
+  "input": {
+    "input_file_name": "AnalysisResults_LHC23PbPb_Pass4_85GoodRun_CBTMuon_Nov25_PtBin.root",
+    #"input_file_name": " AnalysisResults_LHC23PbPb_Pass4_2run_TRDerived_WithoutBkgSub_MyAnalysis.root",
+    "input_folder_name": "CentralityClass_0-100%",
+    "input_name": ["hMassDimu_ME_2-5_10_12"],
+    "pdf_dictionary": {
+      "pdf": ["CB2", "CB2", "VWG", "SUM"],
+      "pdfName": ["Jpsi", "Psi2s", "Bkg", "SUM"],
+      "pdfColor": [861, 417, 1],
+      "pdfNameForLegend": ["J/#psi", "Psi2s","Background", "Fit"],
+      "pdfStyle": [1, 1, 2],
+      "parFix": [
+        [False, False, True, True, True, True],
+        [False, False, True, True, True, True],
+        [False, False, False],
+        [False, False, False]
+      ],
+      "parVal": [
+        [3.096, 1.2e-01, 0.94, 6.99, 2.33, 10.72], #data tails
+        [3.68, 1.5e-01, 0.94, 6.99, 2.33, 10.72],
+        #[3.096, 1.2e-01, 1.048, 2.62, 2.61, 4.67], #MC tails
+        #[3.68, 1.5e-01, 1.048, 2.62, 2.61, 4.67],
+        [1, 1, 1],
+        [1000, 100, 10]
+      ],
+      "parLimMin": [
+        [3.07, 7.0e-02, 0.94, 6.99, 2.33, 10.72],
+        [3.2, 7.0e-02, 0.94, 6.99, 2.33, 10.72],
+        #[3.07, 7.0e-02, 1.048, 2.62, 2.61, 4.67],  #MC tails
+        #[3.2, 7.0e-02, 1.048, 2.62, 2.61, 4.67],
+        [0, 0, -100],
+        [0, 0, 0]
+      ],
+      "parLimMax": [
+        [3.1, 9e-02, 0.94, 6.99, 2.33, 10.72],
+        [3.9,  9e-02, 0.94, 6.99, 2.33, 10.72],
+        #[3.1, 9e-02, 1.048, 2.62, 2.61, 4.67], #MC tails
+        #[3.9,  9e-02, 1.048, 2.62, 2.61, 4.67],
+        #[5, 1, 1], #Centrality
+        [15, 10, 10],  #pT  [5, 2, 3],  #Lower pT [5,2,1]
+        [70000, 55000, 90000]
+      ],
+      "parName": [
+        ["mean_Jpsi", "width_Jpsi", "a_Jpsi", "b_Jpsi", "c_Jpsi", "d_Jpsi"],
+        ["sum::mean_Psi2s(mean_Jpsi,0.584)", "prod::width_Psi2s(width_Jpsi,1.1)", "a_Psi2s", "b_Psi2s", "c_Psi2s", "d_Psi2s"],
+        ["aa", "bb", "cc"],
+        ["sig_Jpsi", "sig_Psi2s", "bkg"]
+      ],
+      "fitRangeMin": [2],
+      "fitRangeMax": [5],
+      "checkVariablesBinsMin": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90],
+      "checkVariablesBinsMax": [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+      "checkVariablesInputFileNames": [
+         "output_validation/hMassDimu_Centrality_0_20_CB2_CB2_VWG_2_5.root",
+         "output_validation/hMassDimu_Centrality_20_40_CB2_CB2_VWG_2_5.root",
+         "output_validation/hMassDimu_Centrality_40_60_CB2_CB2_VWG_2_5.root",
+         "output_validation/hMassDimu_Centrality_60_90_CB2_CB2_VWG_2_5.root"
+             ],
+
+
+      "fitMethod": "chi2", # "likelyhood", "chi2"
+      "doResidualPlot": true,
+      "doPullPlot": true, 
+      "doCorrMatPlot": true,
+      "doAlicePlot": true,
+     # "parForAlicePlot": ["mean_Jpsi", "width_Jpsi", "sig_Jpsi"],
+     # "parNameForAlicePlot": ["#mu_{J/#psi}", "#sigma_{J/#psi}", "#it{N}_{J/#psi}"],
+      "parForAlicePlot": ["mean_Jpsi", "width_Jpsi", "sig_Jpsi", "mean_Psi2s", "width_Psi2s", "sig_Psi2s"],
+      "parNameForAlicePlot": ["#mu_{J/#psi}", "#sigma_{J/#psi}", "#it{N}_{J/#psi}", "#mu_{#psi(2S)}", "#sigma_{#psi(2S)}", "#it{N}_{#psi(2S)}"],
+
+      "text": [
+        [0.20, 0.90, "LHC23 CB2+VWG(data tails), #sqrt{#it{s}} = 5.36 TeV"], 
+        #[0.20, 0.90, "LHC23 CB2+VWG(MC tails), #sqrt{#it{s}} = 5.36 TeV"], 
+        [0.20, 0.85, "2.5 < #it{y} < 4, J/#psi #rightarrow #mu^{+}#mu^{-}"],
+        #[0.35, 0.74, "(0-20)%"],
+        [0.20, 0.78, "(10-12) GeV/#it{c}, (0-100)%"]
+      ]
+    }
+  },
+  "output": {
+    "output_file_name": "CentralityClass_0-100/pT_10-12/",
+    "output_file_systematics": "output_yield/"
+  }
+}

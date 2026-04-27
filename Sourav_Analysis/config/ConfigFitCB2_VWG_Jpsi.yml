@@ -1,0 +1,57 @@
+{
+    "input": {
+      "input_file_name": "AnalysisResults_LHC23PbPb_Pass4_85GoodRun_CBTMuon_Nov25_MyAnalysis_PtBin.root",
+      "input_folder_name": "CentralityClass_0-20%",
+      "input_name": ["hMassDimu_ME_2-5_3_4"],
+      "pdf_dictionary": {
+        "pdf": ["CB2", "VWG", "SUM"],
+        "pdfName": ["Jpsi", "Bkg", "SUM"],
+        "pdfNameForLegend": ["J/#psi", "Background", "Fit"],
+        "pdfColor": [861, 1],
+        "pdfStyle": [1, 2],
+        "parVal": [
+          [3.096, 1.2e-01,0.94, 6.99, 2.33,10.72], #data tails
+          #[3.096, 1.2e-01,1.048, 2.62, 2.61, 4.72], #MC tails
+           [1, 1, 1],
+          [1000, 10000]
+        ],
+        "parLimMin": [
+          [2.9, 7.0e-02, 0.94, 6.99,2.33, 10.72], #data tails
+          #[3.096, 1.2e-01,1.048, 2.62, 2.61, 4.72],
+          [0, 0, -100],
+          [0, 0]
+        ],
+        "parLimMax": [
+          [3.5, 2.5e-01, 0.94, 6.99,2.33, 10.72], #data tails
+          #[3.096, 1.2e-01,1.048, 2.62, 2.61, 4.72],
+          [10, 1, 1],
+          [5000000, 6000000]
+        ],
+        "parName": [
+          ["mean_Jpsi", "width_Jpsi", "a_Jpsi", "b_Jpsi", "c_Jpsi", "d_Jpsi"],
+          ["aa", "bb", "cc"],
+          ["sig_Jpsi", "bkg"]
+        ],
+        "fitRangeMin": [2.2],
+        "fitRangeMax": [4.5],
+        "fitMethod": "chi2",
+        "doResidualPlot": true,
+        "doPullPlot": true, 
+        "doCorrMatPlot": true,
+        "doAlicePlot": true,
+        "parForAlicePlot": ["mean_Jpsi", "width_Jpsi", "sig_Jpsi"],
+        "parNameForAlicePlot": ["#mu_{J/#psi}", "#sigma_{J/#psi}", "#it{N}_{J/#psi}"],
+         "text": [
+        [0.20, 0.90, "LHC23 CB2+VWG(data tails), #sqrt{#it{s}} = 5.36 TeV"], 
+        #[0.20, 0.90, "LHC23 CB2+VWG(MC tails), #sqrt{#it{s}} = 5.36 TeV"], 
+        [0.20, 0.85, "2.5 < #it{y} < 4, J/#psi #rightarrow #mu^{+}#mu^{-}"],
+        #[0.35, 0.74, "(0-20)%"],
+        [0.20, 0.78, "(3-4) GeV/#it{c}, (0-20)%"]
+      ]
+      }
+    },
+    "output": {
+    "output_file_name": "CentralityClass_0-20/pT_3-4_New/",
+    "output_file_systematics": "CentralityClass_0-20"
+    }
+  }
